@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, ReactNode } from "react";
+import React, { InputHTMLAttributes, ReactNode, useState } from "react";
 import { clsx } from "clsx";
 import { Slot } from "@radix-ui/react-slot"  
 import { HtmlHTMLAttributes } from "react";
@@ -6,19 +6,14 @@ import { HtmlHTMLAttributes } from "react";
 export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> { 
     placeholder?: string; 
     
-}
 
-interface TextInputRootProps {
-    children: ReactNode;
-}
-
-interface TextInputIcon {
-    children: ReactNode,
-}
-const TextInputIcon = (props: TextInputIcon ) => {
-    <Slot className="w-6 h-6 text-gray-100"></Slot>
+    
 }
 const TextInput = ({placeholder}: TextInputProps ) => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+
     return (
         <div className=" flex flex-row items-center">
     <form className='flex flex-col items-stretch'>

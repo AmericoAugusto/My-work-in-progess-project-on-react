@@ -5,8 +5,18 @@ import Heading from "./component/Heading";
 import Text from "./component/Text";
 import TextInput from "./component/TextInput";
 import Checkbox from "./component/Checkbox";
+import { useState } from "react";
+import {HiEye, HiEyeOff } from "react-icons/hi"
 
 const App = () => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [show, setShow] = useState("true")
+
+  const handleCLick = (e) => {
+    e.preventDefault()
+    console.log("FUI CLICADO")
+  }
   return (
     <div className="w-screen h-screen bg-black-100 text-color text-gray-300 flex flex-col items-center  justify-center">
       <header className="flex flex-col items-center">
@@ -22,11 +32,16 @@ const App = () => {
         <form className="flex flex-col items-stretch">
           <Text> E-mail address </Text>
           <label htmlFor="email" className="font-semibold" placeholder="Enter your e-mail"></label>
-            <TextInput> </TextInput>
+
+            <TextInput type="email"
+             value={email}
+             onChange={e => setEmail(e.target.value)}> </TextInput>
             <Text> Password </Text>
             <label htmlFor="password" className="font-semibold" placeholder="Enter your password"></label>
 
-            <TextInput> </TextInput>
+            <TextInput type={show ? "text" : "password"}
+             value={password}
+             onChange={e => setPassword(e.target.value)} > </TextInput>
           
 
           <Checkbox />
