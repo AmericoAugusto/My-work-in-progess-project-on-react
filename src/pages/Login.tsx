@@ -5,19 +5,20 @@ import Heading from "../component/Heading";
 import Text from "../component/Text";
 import TextInput from "../component/TextInput";
 import Checkbox from "../component/Checkbox";
-import {useState } from "react";
+import {useContext, useState } from "react";
 import {HiEye, HiEyeOff } from "react-icons/hi"
-import React from "react";
-import  Shopping from "../pages/Shopping";
 import { useNavigate} from "react-router-dom";
+import  MyContext  from "../../src/MyContext";
 
 
-const Login = () => {
+
+
+const Login  = () => {
+  const {email, setEmail,   password, setPassword} = useContext(MyContext)
+  const [show, setShow] = useState(true)
     const navigate = useNavigate();
 
-const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [show, setShow] = useState<boolean>(true)
+
 
   const handleClick = () => {  
     navigate("/Shopping");
@@ -31,7 +32,7 @@ const [email, setEmail] = useState("")
         </Heading>
 
         <Text className=" mb-4" size="lg">
-          Faça login e comece a usar
+        Login and start using
         </Text>
       </header>
       <div className="flex flex-col items-center">
