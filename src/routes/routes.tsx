@@ -3,10 +3,10 @@ import {BrowserRouter
         as Router,
         Route,
         Routes} from 'react-router-dom';
-import InsideCart from './pages/InsideCart';
-import InsideProfile from './pages/InsideProfile';
-import Login from './pages/Login';
-import Shopping from './pages/Shopping';
+import InsideCart from '../pages/InsideCart';
+import InsideProfile from '../pages/InsideProfile';
+import Login from '../pages/Login';
+import Shopping from '../pages/Shopping';
 
 const Directions = () => { 
     return (

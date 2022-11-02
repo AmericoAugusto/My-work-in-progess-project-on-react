@@ -8,7 +8,7 @@ import Checkbox from "../component/Checkbox";
 import {useContext, useState } from "react";
 import {HiEye, HiEyeOff } from "react-icons/hi"
 import { useNavigate} from "react-router-dom";
-import  MyContext  from "../../src/MyContext";
+import  MyContext  from "../context/MyContext";
 
 
 
