@@ -2,13 +2,18 @@ export interface IUser {
     email: string ;
     password: string ;
     id: number;
-  
+    
+      setEmail: (email: string) => string;
+        setPassword: (password: string) => string;
     
 }
 
 export interface IStateUser extends IUser {
-  setEmail: (email: string) => string;
-    setPassword: (password: string) => string;
+    setNewUser: {
+      email: string ;
+      password: string ;
+
+    }
     type: "user"
  }
 

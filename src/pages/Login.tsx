@@ -5,24 +5,45 @@ import Heading from "../component/Heading";
 import Text from "../component/Text";
 import TextInput from "../component/TextInput";
 import Checkbox from "../component/Checkbox";
-import {useContext, useState } from "react";
+import {useContext, useEffect, useState } from "react";
 import {HiEye, HiEyeOff } from "react-icons/hi"
 import { useNavigate} from "react-router-dom";
 import  MyContext  from "../context/MyContext";
+import { IStateUser } from "../types/types";
+import Directions from "../routes/routes";
+
 
 
 
 
 const Login  = () => {
-  const {email, setEmail,   password, setPassword} = useContext(MyContext)
+  const navigate = useNavigate();
+  const {email, setEmail,   password, setPassword, setNewUser, user} = useContext(MyContext)
   const [show, setShow] = useState(true)
-    const navigate = useNavigate();
+    
 
 
 
-  const handleClick = () => {  
-    navigate("/Shopping");
+  const handleClick = (e, ...user: (string | number)[]) => {  
+    
+    useEffect(() => {
+      navigate("/Shopping");
+      setNewUser([
+        ...user,
+        {
+          id: Math.random() * 700,
+          email,
+          password
+        }
+      ])
+      
+    }
+    
+    , []);
+     e.preventDefault();
+   
   }
+   
 
   return (
     <div className="w-screen h-screen bg-gray-200 text-color text-gray-300 flex flex-col items-center  justify-center">
