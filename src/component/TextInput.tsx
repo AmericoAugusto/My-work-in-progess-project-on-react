@@ -10,9 +10,6 @@ export interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
     
 }
 const TextInput = ({placeholder}: TextInputProps ) => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
 
     return (
         <div className=" flex flex-row items-center">

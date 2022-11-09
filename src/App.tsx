@@ -16,9 +16,10 @@ import { IStateUser, IUser } from "./types/types";
 const App = () => {
   const [email, setEmail] = useState<IUser>()
   const [password, setPassword] = useState<IUser>()
+  const [user, setNewUser] = useState<IUser>()
   
   return (
-      <MyContext.Provider value={{password, email, setEmail, setPassword}}>
+      <MyContext.Provider value={{password, email, setEmail, setPassword, setNewUser, user}}>
         <Directions />
         
       </MyContext.Provider>
