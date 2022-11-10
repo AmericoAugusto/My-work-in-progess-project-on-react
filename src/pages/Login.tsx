@@ -25,8 +25,9 @@ const Login  = () => {
 
 
   const handleClick = (e, ...user: (string | number)[]) => {  
-    
-    useEffect(() => {
+    const navigate = useNavigate();
+
+    e.preventDefault();
       navigate("/Shopping");
       setNewUser([
         ...user,
@@ -38,11 +39,9 @@ const Login  = () => {
       ])
       
     }
-    
-    , []);
-     e.preventDefault();
+     
    
-  }
+  
    
 
   return (
